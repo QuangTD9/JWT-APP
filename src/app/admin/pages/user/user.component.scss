@@ -1,0 +1,23 @@
+.main-panel{
+    width: 100%;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.box-title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+}
+
+.box-header>.box-tools {
+    position: absolute;
+    right: 10px;
+    top: -3px;
+}

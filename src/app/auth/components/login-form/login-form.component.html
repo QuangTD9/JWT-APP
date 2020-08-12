@@ -1,0 +1,35 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input type="text" class="form-control form-control-lg" formControlName="username" id="exampleInputEmail1"
+            placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control form-control-lg" formControlName="password"
+            id="exampleInputPassword1" placeholder="Password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <button [disabled]="loading" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            SIGN IN
+        </button>
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+    </div>
+    <div class="my-2 d-flex justify-content-between align-items-center">
+        <div class="form-check">
+            <label class="form-check-label text-muted">
+                <input type="checkbox" class="form-check-input">
+                Keep me signed in<i _ngcontent-fqu-c48="" class="input-helper"></i>
+            </label>
+        </div>
+    </div>
+    <div class="text-center mt-4 font-weight-light">
+        Don't have an account? <a [routerLink]="['/auth/registration']" class="text-primary">Create</a>
+    </div>
+</form>
