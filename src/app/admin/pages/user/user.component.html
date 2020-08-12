@@ -1,4 +1,4 @@
-<div class="container-scroller">
+<div class="container-scroller" *ngIf="!loading">
     <!-- navbar -->
     <app-navbar></app-navbar>
     <!-- navbar -->
@@ -12,7 +12,7 @@
                                 <div class="box-header">
                                     <h3 class="box-title">Users</h3>
 
-                                    <div class="box-tools">
+                                    <div class="box-tools" *ngIf="users">
                                         <div class="row" style="margin: 5px;">
                                             <nav aria-label="Page navigation example" style="margin: auto;">
                                                 <ul class="pagination justify-content-center">
