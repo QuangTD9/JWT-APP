@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { LAYOUT_COMPONENTS } from './layout';
-import { COMPONENTS } from './pages';
-import { PIPES } from '@app/pipes';
+import { AdminComponent } from '@app/admin/admin.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [LAYOUT_COMPONENTS, COMPONENTS, PIPES],
+  declarations: [LAYOUT_COMPONENTS, AdminComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    RouterModule
   ]
 })
 export class AdminModule { }
