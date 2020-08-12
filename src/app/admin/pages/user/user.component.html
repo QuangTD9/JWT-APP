@@ -1,4 +1,4 @@
-<div class="container-scroller" *ngIf="!loading">
+<div class="container-scroller">
     <!-- navbar -->
     <app-navbar></app-navbar>
     <!-- navbar -->
@@ -54,7 +54,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr *ngFor="let user of users">
+                                            <tr *ngFor="let user of users; trackBy: trackByFn">
                                                 <td>
                                                     {{user.name}}
                                                 </td>

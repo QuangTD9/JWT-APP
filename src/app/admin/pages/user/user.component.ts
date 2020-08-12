@@ -56,6 +56,10 @@ export class UserComponent implements OnInit, OnDestroy {
     }
   }
 
+  trackByFn(index, item): number {
+    return index;
+  }
+
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
     this.onDestroy$.complete();
